@@ -1,16 +1,16 @@
-# Project: 518.零钱兑换II
+# Project: 53. 最大子序和
 # Makefile created by Dev-C++ 5.16
 
 CPP      = g++.exe -D__DEBUG__
 CC       = gcc.exe -D__DEBUG__
 WINDRES  = windres.exe
-RES      = 518.零钱兑换II_private.res
+RES      = 53._最大子序和_private.res
 OBJ      = main.o $(RES)
 LINKOBJ  = main.o $(RES)
 LIBS     = -L"D:/应用/Dev-Cpp/MinGW64/lib" -L"D:/应用/Dev-Cpp/MinGW64/x86_64-w64-mingw32/lib" -g3
 INCS     = -I"D:/应用/Dev-Cpp/MinGW64/include" -I"D:/应用/Dev-Cpp/MinGW64/x86_64-w64-mingw32/include" -I"D:/应用/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/8.1.0/include"
 CXXINCS  = -I"D:/应用/Dev-Cpp/MinGW64/include" -I"D:/应用/Dev-Cpp/MinGW64/x86_64-w64-mingw32/include" -I"D:/应用/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/8.1.0/include" -I"D:/应用/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++"
-BIN      = 518.零钱兑换II.exe
+BIN      = "53. 最大子序和.exe"
 CXXFLAGS = $(CXXINCS) -Wextra -g3 -pipe
 CFLAGS   = $(INCS) -Wextra -g3 -pipe
 RM       = del /q
@@ -28,6 +28,6 @@ $(BIN): $(OBJ)
 main.o: main.cpp
 	$(CPP) -c main.cpp -o main.o $(CXXFLAGS)
 
-518.零钱兑换II_private.res: 518.零钱兑换II_private.rc 
-	$(WINDRES) -i 518.零钱兑换II_private.rc --input-format=rc -o 518.零钱兑换II_private.res -O coff 
+53._最大子序和_private.res: 53._最大子序和_private.rc 
+	$(WINDRES) -i 53._最大子序和_private.rc --input-format=rc -o 53._最大子序和_private.res -O coff 
 
