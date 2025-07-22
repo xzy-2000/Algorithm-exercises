@@ -8,15 +8,25 @@ class Solution {
 		int sum;
 		void backtracking(int sum, int startIndex, int target, vector<int> &candidates) {
 			// 终止条件
+			if (sum > target) {
+				return;
+			}
 			if (sum == target) {
+//				cout << "get!";
 				result.push_back(path);
 				return;
 			}
+			// 遍历
 			for (int i = startIndex; i < candidates.size(); i++) {
 				sum += candidates[i];
+//				cout << "sum = " << sum << endl;
 				path.push_back(candidates[i]);
-				backtracking(sum, i, target, candidates);
+				// 递归
+				backtracking(sum, i, target, candidates);// 关键点:不用i+1了，表示可以重复读取当前的数
+				// 回溯
+
 				sum -= candidates[i];
+//				cout << "sum = " << sum << endl;
 				path.pop_back();
 			}
 		}

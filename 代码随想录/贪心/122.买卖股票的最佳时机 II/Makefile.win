@@ -1,16 +1,16 @@
-# Project: 39. 组合总和
+# Project: 122.买卖股票的最佳时机 II
 # Makefile created by Dev-C++ 5.16
 
 CPP      = g++.exe -D__DEBUG__
 CC       = gcc.exe -D__DEBUG__
 WINDRES  = windres.exe
-RES      = 39._组合总和_private.res
+RES      = 122.买卖股票的最佳时机_II_private.res
 OBJ      = main.o $(RES)
 LINKOBJ  = main.o $(RES)
 LIBS     = -L"D:/应用/Dev-Cpp/MinGW64/lib" -L"D:/应用/Dev-Cpp/MinGW64/x86_64-w64-mingw32/lib" -g3
 INCS     = -I"D:/应用/Dev-Cpp/MinGW64/include" -I"D:/应用/Dev-Cpp/MinGW64/x86_64-w64-mingw32/include" -I"D:/应用/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/8.1.0/include"
 CXXINCS  = -I"D:/应用/Dev-Cpp/MinGW64/include" -I"D:/应用/Dev-Cpp/MinGW64/x86_64-w64-mingw32/include" -I"D:/应用/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/8.1.0/include" -I"D:/应用/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++"
-BIN      = "39. 组合总和.exe"
+BIN      = "122.买卖股票的最佳时机 II.exe"
 CXXFLAGS = $(CXXINCS) -Wextra -g3 -pipe
 CFLAGS   = $(INCS) -Wextra -g3 -pipe
 RM       = del /q
@@ -28,6 +28,6 @@ $(BIN): $(OBJ)
 main.o: main.cpp
 	$(CPP) -c main.cpp -o main.o $(CXXFLAGS)
 
-39._组合总和_private.res: 39._组合总和_private.rc 
-	$(WINDRES) -i 39._组合总和_private.rc --input-format=rc -o 39._组合总和_private.res -O coff 
+122.买卖股票的最佳时机_II_private.res: 122.买卖股票的最佳时机_II_private.rc 
+	$(WINDRES) -i 122.买卖股票的最佳时机_II_private.rc --input-format=rc -o 122.买卖股票的最佳时机_II_private.res -O coff 
 
