@@ -1,19 +1,19 @@
 [Project]
-FileName=337.打家劫舍 III.dev
-Name=337.打家劫舍 III
+FileName=121. 买卖股票的最佳时机.dev
+Name=121. 买卖股票的最佳时机
 Type=1
 Ver=2
 ObjFiles=
 Includes=
 Libs=
-PrivateResource=337.打家劫舍_III_private.rc
+PrivateResource=
 ResourceIncludes=
 MakeIncludes=
 Compiler=
 CppCompiler=
 Linker=
 IsCpp=1
-Icon=337.打家劫舍 III.ico
+Icon=121. 买卖股票的最佳时机.ico
 ExeOutput=
 ObjectOutput=
 LogOutput=

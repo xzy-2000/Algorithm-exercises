@@ -1,19 +1,19 @@
 [Project]
-FileName=337.打家劫舍 III.dev
-Name=337.打家劫舍 III
+FileName=93.复原IP地址.dev
+Name=93.复原IP地址
 Type=1
 Ver=2
 ObjFiles=
 Includes=
 Libs=
-PrivateResource=337.打家劫舍_III_private.rc
+PrivateResource=93.复原IP地址_private.rc
 ResourceIncludes=
 MakeIncludes=
 Compiler=
 CppCompiler=
 Linker=
 IsCpp=1
-Icon=337.打家劫舍 III.ico
+Icon=93.复原IP地址.ico
 ExeOutput=
 ObjectOutput=
 LogOutput=
