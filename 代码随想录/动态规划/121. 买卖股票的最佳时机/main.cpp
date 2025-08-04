@@ -16,7 +16,7 @@ class Solution {
 				dp[i][0] = max(dp[i - 1][0], - prices[i]);
 				dp[i][1] = max(dp[i - 1][0] + prices[i], dp[i - 1][1]);
 			}
-			return dp[prices.size() - 1][0];
+			return dp[prices.size() - 1][1];
 		}
 };
 

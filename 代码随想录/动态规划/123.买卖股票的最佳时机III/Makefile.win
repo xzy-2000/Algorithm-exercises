@@ -1,15 +1,16 @@
-# Project: 121. 买卖股票的最佳时机
+# Project: 123.买卖股票的最佳时机III
 # Makefile created by Dev-C++ 5.16
 
 CPP      = g++.exe -D__DEBUG__
 CC       = gcc.exe -D__DEBUG__
 WINDRES  = windres.exe
-OBJ      = main.o
-LINKOBJ  = main.o
+RES      = 123.买卖股票的最佳时机III_private.res
+OBJ      = main.o $(RES)
+LINKOBJ  = main.o $(RES)
 LIBS     = -L"D:/应用/Dev-Cpp/MinGW64/lib" -L"D:/应用/Dev-Cpp/MinGW64/x86_64-w64-mingw32/lib" -g3
 INCS     = -I"D:/应用/Dev-Cpp/MinGW64/include" -I"D:/应用/Dev-Cpp/MinGW64/x86_64-w64-mingw32/include" -I"D:/应用/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/8.1.0/include"
 CXXINCS  = -I"D:/应用/Dev-Cpp/MinGW64/include" -I"D:/应用/Dev-Cpp/MinGW64/x86_64-w64-mingw32/include" -I"D:/应用/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/8.1.0/include" -I"D:/应用/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++"
-BIN      = "121. 买卖股票的最佳时机.exe"
+BIN      = 123.买卖股票的最佳时机III.exe
 CXXFLAGS = $(CXXINCS) -Wextra -g3 -pipe
 CFLAGS   = $(INCS) -Wextra -g3 -pipe
 RM       = del /q
@@ -26,3 +27,7 @@ $(BIN): $(OBJ)
 
 main.o: main.cpp
 	$(CPP) -c main.cpp -o main.o $(CXXFLAGS)
+
+123.买卖股票的最佳时机III_private.res: 123.买卖股票的最佳时机III_private.rc 
+	$(WINDRES) -i 123.买卖股票的最佳时机III_private.rc --input-format=rc -o 123.买卖股票的最佳时机III_private.res -O coff 
+
