@@ -1,0 +1,99 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+struct TreeNode {
+	int val;
+	TreeNode *left;
+	TreeNode *right;
+	TreeNode() : val(0), left(nullptr), right(nullptr) {}
+	TreeNode(int x) : val(x), left(nullptr), right(nullptr) {}
+	TreeNode(int x, TreeNode *left, TreeNode *right)
+		: val(x), left(left), right(right) {}
+};
+
+class Solution {
+	public:
+		bool compare(TreeNode *left, TreeNode *right) {
+			if (left != nullptr && right == nullptr)
+				return false;
+			else if (right != nullptr && left == nullptr)
+				return false;
+			else if (left == nullptr && right == nullptr)
+				return true;
+			// 排除了空节点，再排除数值不相同的情况
+			else if (left->val != right->val)
+				return false;
+			else {
+				bool outside = compare(left->left, right->right); // 左子树：左、 右子树：右
+				bool inside = compare(left->right, right->left);   // 左子树：右、 右子树：左
+				bool isSame = outside && inside;                  // 左子树：中、 右子树：中 （逻辑处理）
+				return isSame;
+			}
+		}
+		bool isSymmetric(TreeNode *root) {
+			if (root == nullptr)
+				return true;
+			return compare(root->left, root->right);
+		}
+		// 层序遍历
+		vector<vector<int>> levelOrder(TreeNode *root) {
+
+			queue<TreeNode *> que;
+			if (root != nullptr)
+				que.push(root);
+			vector<vector<int>> result;
+			while (!que.empty()) {
+				int size = que.size();
+				vector<int> vec;
+				for (int i = 0; i < size; i++) {
+					TreeNode *node = que.front();
+					que.pop();
+					vec.emplace_back(node->val);
+					if (node->left != nullptr)
+						que.push(node->left);
+					if (node->right != nullptr)
+						que.push(node->right);
+				}
+				result.emplace_back(vec);
+			}
+			return result;
+		}
+};
+
+int main(int argc, char **argv) {
+	// 构建测试用的二叉树
+	//       1
+	//      / \
+	//     2   2
+	//    / 	\
+	//   3  	 3
+	TreeNode *root = new TreeNode(1);
+	root->left = new TreeNode(2);
+	root->right = new TreeNode(2);
+	root->left->left = new TreeNode(3);
+	root->right->right = new TreeNode(3);
+	Solution solution;
+	// 层序遍历
+	vector<vector<int>> result = solution.levelOrder(root);
+	// 输出层序遍历结果
+	cout << "层序遍历结果:" << endl;
+
+	for (const auto &level : result) {
+		cout << "第 " << &level - &result[0] + 1 << " 层: ";
+		for (int num : level) {
+			cout << num << " ";
+		}
+		cout << endl;
+	}
+	cout << solution.isSymmetric(root);
+	// 释放内存
+	delete root->right->left;
+	delete root->right->right;
+	delete root->left->left;
+	delete root->left->right;
+	delete root->left;
+	delete root->right;
+	delete root;
+
+	return 0;
+}
