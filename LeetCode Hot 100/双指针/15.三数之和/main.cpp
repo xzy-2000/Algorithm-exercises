@@ -6,16 +6,31 @@ class Solution {
 		vector<vector<int>> threeSum(vector<int> &nums) {
 			int left = 0;
 			int right = 0;
-			int n = nums.size();
-			vector<vector<int>> Sum;
-			while (right < n) {
-				if (nums[right] != 0) {
-					swap(nums[right], nums[left]);
-					left++;
+			int len = nums.size();
+			vector<vector<int>> sum;
+			sort(nums.begin(), nums.end());
+			for (int i = 0; i < len; i++) {
+				int left = i + 1, right = len - 1;
+				// 去重
+				if (i != 0 && nums[i] == nums[i - 1])
+					continue;
+				while (left < right) {
+					if (nums[i] + nums[left] + nums[right] == 0) {
+						sum.push_back({nums[i], nums[left], nums[right]});
+						left++;
+						right--;
+						// 去重
+						while (left < right && nums[left] == nums[left - 1])
+							left++;
+						while (left < right && nums[right] == nums[right + 1])
+							right--;
+					} else if (nums[i] + nums[left] + nums[right] > 0)
+						right--;
+					else
+						left++;
 				}
-				right++;
 			}
-			return Sum;
+			return sum;
 		}
 };
 
@@ -28,6 +43,7 @@ int main(int argc, char **argv) {
 		for (int num : prems) {
 			cout << num << " ";
 		}
+		cout << endl;
 	}
 	return 0;
 }
