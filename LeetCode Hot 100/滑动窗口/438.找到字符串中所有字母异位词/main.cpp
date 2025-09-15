@@ -4,36 +4,27 @@ using namespace std;
 class Solution {
 	public:
 		vector<int> findAnagrams(string s, string p) {
-			unordered_map<char, int> need, window;
-			for (char c : p)
-				need[c]++;
-
+			vector<int> sCnt(26, 0);
+			vector<int> pCnt(26, 0);
 			vector<int> result;
 			int len = p.size();
-			int left = 0, right = 0;
-			int valid = 0;
-			while (right < s.size()) {
-				char c = s[right];
-				right++;
-				// 进行窗口内数据的一系列更新
-				if (need.find(c) != need.end()) {
-					window[c]++;
-					if (window[c] == need[c])
-						valid++;
-				}
-				while (right - left >= len) {
-					// 当窗口符合条件时，把起始索引加入 res
-					if (valid == need.size())
-						result.push_back(left);
-					char d = s[left];
+			for (char c : p) {
+				pCnt[c - 'a']++;
+			}
+			for (int left = 0, right = 0; right < s.size(); ++right) {
+				// 加入右边的元素
+				sCnt[s[right] - 'a']++;
+
+				// 窗口超过p长度时，左边字符频次减一，左指针右移
+				if (right - left + 1 > len) {
+					// 去掉左边的元素
+					sCnt[s[left] - 'a']--;
 					left++;
-					// 进行窗口内数据的一系列更新
-					if (need.find(d) != need.end()) {
-						if (window[d] == need[d])
-							valid--;
-						window[d]--;
-					}
 				}
+				if (right - left + 1 == len && sCnt == pCnt) {
+					result.push_back(left);
+				}
+
 			}
 			return result;
 		}

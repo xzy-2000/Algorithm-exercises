@@ -1,19 +1,19 @@
 [Project]
-FileName=51. N皇后.dev
-Name=51. N皇后
+FileName=98.验证二叉搜索树.dev
+Name=98.验证二叉搜索树
 Type=1
 Ver=2
 ObjFiles=
 Includes=
 Libs=
-PrivateResource=
+PrivateResource=98.验证二叉搜索树_private.rc
 ResourceIncludes=
 MakeIncludes=
 Compiler=
 CppCompiler=
 Linker=
 IsCpp=1
-Icon=51. N皇后.ico
+Icon=98.验证二叉搜索树.ico
 ExeOutput=
 ObjectOutput=
 LogOutput=

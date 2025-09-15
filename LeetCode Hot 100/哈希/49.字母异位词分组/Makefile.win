@@ -1,16 +1,15 @@
-# Project: 438.找到字符串中所有字母异位词
+# Project: 字母异位词分组
 # Makefile created by Dev-C++ 5.16
 
 CPP      = g++.exe -D__DEBUG__
 CC       = gcc.exe -D__DEBUG__
 WINDRES  = windres.exe
-RES      = 438.找到字符串中所有字母异位词_private.res
-OBJ      = main.o $(RES)
-LINKOBJ  = main.o $(RES)
+OBJ      = main.o
+LINKOBJ  = main.o
 LIBS     = -L"D:/Technology/Dev-Cpp/MinGW64/lib" -L"D:/Technology/Dev-Cpp/MinGW64/x86_64-w64-mingw32/lib" -g3
 INCS     = -I"D:/Technology/Dev-Cpp/MinGW64/include" -I"D:/Technology/Dev-Cpp/MinGW64/x86_64-w64-mingw32/include" -I"D:/Technology/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/8.1.0/include"
 CXXINCS  = -I"D:/Technology/Dev-Cpp/MinGW64/include" -I"D:/Technology/Dev-Cpp/MinGW64/x86_64-w64-mingw32/include" -I"D:/Technology/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/8.1.0/include" -I"D:/Technology/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++"
-BIN      = 438.找到字符串中所有字母异位词.exe
+BIN      = 字母异位词分组.exe
 CXXFLAGS = $(CXXINCS) -Wextra -g3 -pipe -std=c++11
 CFLAGS   = $(INCS) -Wextra -g3 -pipe -std=c++11
 RM       = del /q
@@ -27,7 +26,3 @@ $(BIN): $(OBJ)
 
 main.o: main.cpp
 	$(CPP) -c main.cpp -o main.o $(CXXFLAGS)
-
-438.找到字符串中所有字母异位词_private.res: 438.找到字符串中所有字母异位词_private.rc 
-	$(WINDRES) -i 438.找到字符串中所有字母异位词_private.rc --input-format=rc -o 438.找到字符串中所有字母异位词_private.res -O coff 
-
