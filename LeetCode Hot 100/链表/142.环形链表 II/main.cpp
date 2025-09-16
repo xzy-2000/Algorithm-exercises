@@ -11,17 +11,21 @@ struct ListNode {
 class Solution {
 	public:
 		// 判断链表是否有环
-		bool hasCycle(ListNode *head) {
+		ListNode *detectCycle(ListNode *head) {
+			ListNode *fast = head;
 			ListNode *slow = head;
-			ListNode *fast = head; // 乌龟和兔子同时从起点出发
 			while (fast && fast->next) {
-				slow = slow->next; // 乌龟走一步
-				fast = fast->next->next; // 兔子走两步
+				fast = fast->next->next;
+				slow = slow->next;
 				if (fast == slow) {
-					return true;
+					while (slow != head) {
+						head = head->next;
+						slow = slow->next;
+					}
+					return head;
 				}
 			}
-			return false;
+			return nullptr;
 		}
 };
 
@@ -60,10 +64,10 @@ int main() {
 
 	ListNode *head = createLinkedList(arr, pos);
 
-	bool result = solution.hasCycle(head);
+	ListNode *result = solution.detectCycle(head);
 
 	if (result) {
-		cout << "true" << endl;
+		cout << "true " << result->val << endl;
 	} else {
 		cout << "false" << endl;
 	}

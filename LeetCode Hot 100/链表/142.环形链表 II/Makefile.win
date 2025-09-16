@@ -1,16 +1,16 @@
-# Project: 141.环形链表
+# Project: 142.环形链表 II
 # Makefile created by Dev-C++ 5.16
 
 CPP      = g++.exe -D__DEBUG__
 CC       = gcc.exe -D__DEBUG__
 WINDRES  = windres.exe
-RES      = 141.环形链表_private.res
+RES      = 142.环形链表_II_private.res
 OBJ      = main.o $(RES)
 LINKOBJ  = main.o $(RES)
 LIBS     = -L"D:/technology/Dev-Cpp/MinGW64/lib" -L"D:/technology/Dev-Cpp/MinGW64/x86_64-w64-mingw32/lib" -g3
 INCS     = -I"D:/technology/Dev-Cpp/MinGW64/include" -I"D:/technology/Dev-Cpp/MinGW64/x86_64-w64-mingw32/include" -I"D:/technology/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/8.1.0/include"
 CXXINCS  = -I"D:/technology/Dev-Cpp/MinGW64/include" -I"D:/technology/Dev-Cpp/MinGW64/x86_64-w64-mingw32/include" -I"D:/technology/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/8.1.0/include" -I"D:/technology/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++"
-BIN      = 141.环形链表.exe
+BIN      = "142.环形链表 II.exe"
 CXXFLAGS = $(CXXINCS) -Wextra -g3 -pipe -std=c++11
 CFLAGS   = $(INCS) -Wextra -g3 -pipe -std=c++11
 RM       = del /q
@@ -28,6 +28,6 @@ $(BIN): $(OBJ)
 main.o: main.cpp
 	$(CPP) -c main.cpp -o main.o $(CXXFLAGS)
 
-141.环形链表_private.res: 141.环形链表_private.rc 
-	$(WINDRES) -i 141.环形链表_private.rc --input-format=rc -o 141.环形链表_private.res -O coff 
+142.环形链表_II_private.res: 142.环形链表_II_private.rc 
+	$(WINDRES) -i 142.环形链表_II_private.rc --input-format=rc -o 142.环形链表_II_private.res -O coff 
 
