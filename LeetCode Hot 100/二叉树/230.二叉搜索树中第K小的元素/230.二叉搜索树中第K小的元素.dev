@@ -1,19 +1,19 @@
 [Project]
-FileName=236. 二叉树的最近公共祖先.dev
-Name=236. 二叉树的最近公共祖先
+FileName=230.二叉搜索树中第K小的元素.dev
+Name=230.二叉搜索树中第K小的元素
 Type=1
 Ver=2
 ObjFiles=
 Includes=
 Libs=
-PrivateResource=236._二叉树的最近公共祖先_private.rc
+PrivateResource=230.二叉搜索树中第K小的元素_private.rc
 ResourceIncludes=
 MakeIncludes=
 Compiler=
 CppCompiler=
 Linker=
 IsCpp=1
-Icon=236. 二叉树的最近公共祖先.ico
+Icon=230.二叉搜索树中第K小的元素.ico
 ExeOutput=
 ObjectOutput=
 LogOutput=

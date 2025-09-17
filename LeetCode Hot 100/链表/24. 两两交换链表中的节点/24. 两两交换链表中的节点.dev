@@ -1,19 +1,19 @@
 [Project]
-FileName=236. 二叉树的最近公共祖先.dev
-Name=236. 二叉树的最近公共祖先
+FileName=24. 两两交换链表中的节点.dev
+Name=24. 两两交换链表中的节点
 Type=1
 Ver=2
 ObjFiles=
 Includes=
 Libs=
-PrivateResource=236._二叉树的最近公共祖先_private.rc
+PrivateResource=24._两两交换链表中的节点_private.rc
 ResourceIncludes=
 MakeIncludes=
 Compiler=
 CppCompiler=
 Linker=
 IsCpp=1
-Icon=236. 二叉树的最近公共祖先.ico
+Icon=24. 两两交换链表中的节点.ico
 ExeOutput=
 ObjectOutput=
 LogOutput=

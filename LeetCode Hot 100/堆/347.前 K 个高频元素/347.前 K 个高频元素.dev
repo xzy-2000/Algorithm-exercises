@@ -1,19 +1,19 @@
 [Project]
-FileName=236. 二叉树的最近公共祖先.dev
-Name=236. 二叉树的最近公共祖先
+FileName=347.前 K 个高频元素.dev
+Name=347.前 K 个高频元素
 Type=1
 Ver=2
 ObjFiles=
 Includes=
 Libs=
-PrivateResource=236._二叉树的最近公共祖先_private.rc
+PrivateResource=347.前_K_个高频元素_private.rc
 ResourceIncludes=
 MakeIncludes=
 Compiler=
 CppCompiler=
 Linker=
 IsCpp=1
-Icon=236. 二叉树的最近公共祖先.ico
+Icon=347.前 K 个高频元素.ico
 ExeOutput=
 ObjectOutput=
 LogOutput=
