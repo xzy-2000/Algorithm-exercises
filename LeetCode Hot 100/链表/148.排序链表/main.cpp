@@ -8,43 +8,60 @@ struct ListNode {
 	ListNode(int x, ListNode *next) : val(x), next(next) {}
 };
 
+void display(ListNode *head) {
+	ListNode *root = head;
+	while (root != nullptr) {
+		cout << root->val << " ";
+		root = root->next;
+	}
+	cout << endl;
+}
+
 class Solution {
 	public:
-		//判断回文链表
-		bool isPalindrome(ListNode *head) {
-			ListNode *mid = middleNode(head);
-			ListNode *head2 = reverseList(mid);
-			while (head2) {
-				if (head->val != head2->val) {
-					return false;
-				}
-				head = head->next;
-				head2 = head2->next;
-			}
-			return true;
+		ListNode *sortList(ListNode *head) {
+			if (head == nullptr || head->next == nullptr)
+				return head;
+
+			ListNode *head2 = middleNode(head);
+			// 分治
+			head = sortList(head);
+			head2 = sortList(head2);
+			return mergeTwoLists(head, head2);
 		}
 	private:
-		// 寻找中间结点,使用快慢指针寻找
+		// 876. 链表的中间结点（快慢指针）
 		ListNode *middleNode(ListNode *head) {
+			ListNode *pre = head;
 			ListNode *fast = head;
 			ListNode *slow = head;
 			while (fast && fast->next) {
-				fast = fast->next->next;
+				pre = slow; // 记录 slow 的前一个节点
 				slow = slow->next;
+				fast = fast->next->next;
 			}
+			pre->next = nullptr; // 断开 slow 的前一个节点和 slow 的连接
 			return slow;
 		}
 
-		// 反转链表
-		ListNode *reverseList(ListNode *head) {
-			ListNode *pre = nullptr, *cur = head;
-			while (cur) {
-				ListNode *tmp = cur->next;
-				cur->next = pre;
-				pre = cur;
-				cur = tmp;
+		// 21. 合并两个有序链表（双指针）
+		ListNode *mergeTwoLists(ListNode *list1, ListNode *list2) {
+			ListNode *dummy = new ListNode(-1); // 用哨兵节点简化代码逻辑
+			ListNode *cur = dummy; // cur 指向新链表的末尾
+			while (list1 && list2) {
+				if (list1->val < list2->val) {
+					cur->next = list1;
+					list1 = list1->next;
+				} else {
+					cur->next = list2;
+					list2 = list2->next;
+				}
+				cur = cur->next;
 			}
-			return pre;
+			cur->next = list1 ? list1 : list2; // 拼接剩余链表
+			ListNode *result = dummy->next;
+			delete dummy; // 释放dummy节点
+			return result;
 		}
 };
 
@@ -61,6 +78,14 @@ ListNode *createLinkedList(vector<int> &arr, int n) {
 	return head;
 }
 
+// 释放链表的辅助函数
+void deleteLinkedList(ListNode *head) {
+	while (head) {
+		ListNode *temp = head;
+		head = head->next;
+		delete temp;
+	}
+}
 
 int main(int argc, char **argv) {
 	Solution solution;
@@ -68,13 +93,8 @@ int main(int argc, char **argv) {
 	vector<int> arrA = {-1, 5, 3, 4, 0};
 	ListNode *head = createLinkedList(arrA, arrA.size());
 
-	bool result = solution.isPalindrome(head);
-
-	if (result) {
-		cout << "true" << endl;
-	} else {
-		cout << "false" << endl;
-	}
-
+	ListNode *result = solution.sortList(head);
+	display(result);
+	deleteLinkedList(result); // 释放内存
 	return 0;
-}
+};
