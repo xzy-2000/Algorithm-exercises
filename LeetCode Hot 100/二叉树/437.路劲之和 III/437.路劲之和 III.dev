@@ -1,19 +1,19 @@
 [Project]
-FileName=138.随机链表的复制.dev
-Name=138.随机链表的复制
+FileName=437.路劲之和 III.dev
+Name=437.路劲之和 III
 Type=1
 Ver=2
 ObjFiles=
 Includes=
 Libs=
-PrivateResource=138.随机链表的复制_private.rc
+PrivateResource=437.路劲之和_III_private.rc
 ResourceIncludes=
 MakeIncludes=
 Compiler=
 CppCompiler=
 Linker=
 IsCpp=1
-Icon=138.随机链表的复制.ico
+Icon=437.路劲之和 III.ico
 ExeOutput=
 ObjectOutput=
 LogOutput=
